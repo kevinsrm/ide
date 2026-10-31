@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.kevinsrm.ide.IdeFragment
 import com.kevinsrm.ide.R
 import com.kevinsrm.ide.databinding.FragmentTerminalBinding
+import kotlinx.coroutines.launch
 
 /**
  * Fragmento do Terminal embutido.
@@ -58,7 +59,7 @@ class TerminalFragment : IdeFragment() {
 
         // Tecla Enter no teclado
         binding.terminalInput.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == android.view.ImeInfo.IME_ACTION_SEND) {
+            if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_SEND) {
                 val command = binding.terminalInput.text.toString().trim()
                 if (command.isNotEmpty()) {
                     executeCommand(command)
@@ -77,7 +78,7 @@ class TerminalFragment : IdeFragment() {
         appendOutput("\$ $command\n")
 
         // Execucao assincrona (corrotina)
-        lifecycleScope.launchWhenStarted {
+        lifecycleScope.launch {
             terminalSession.execute(command).let { result ->
                 appendOutput(result.output)
                 if (result.error.isNotEmpty()) {

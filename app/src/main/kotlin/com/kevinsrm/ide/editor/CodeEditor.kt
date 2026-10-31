@@ -53,7 +53,7 @@ class OpenFileAdapter(
 ) : RecyclerView.Adapter<OpenFileAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tabTitle: TextView = itemView.findViewById(R.id.tab_title)
+        private val tabTitle: TextView = itemView.findViewById(R.id.file_name)
         fun bind(path: String) {
             tabTitle.text = path.substringAfterLast("/")
         }
