@@ -37,6 +37,9 @@ class TerminalFragment : IdeFragment() {
         val view = binding.root
 
         terminalSession = ViewModelProvider(this)[TerminalSession::class.java]
+        // Injeta o contexto da aplicacao (necessario para detectar o Termux
+        // e para resolver o diretorio padrao de projetos)
+        terminalSession.init(requireContext().applicationContext)
 
         // Vincula ao diretorio do projeto ativo
         projectManager.activeProjectDir?.let { dir ->

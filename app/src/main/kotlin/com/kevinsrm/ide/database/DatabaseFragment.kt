@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.kevinsrm.ide.IdeFragment
 import com.kevinsrm.ide.R
@@ -26,7 +25,8 @@ class DatabaseFragment : IdeFragment() {
     private var _binding: FragmentDatabaseBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var databaseService: DatabaseService
+    // 'databaseService' vem de IdeFragment (ViewModel compartilhado da
+    // MainActivity), entao nao deve ser redeclarado aqui.
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,8 +35,6 @@ class DatabaseFragment : IdeFragment() {
     ): View {
         _binding = FragmentDatabaseBinding.inflate(inflater, container, false)
         val view = binding.root
-
-        databaseService = ViewModelProvider(this)[DatabaseService::class.java]
 
         binding.databaseOutput.movementMethod = ScrollingMovementMethod()
         updateStatus()
