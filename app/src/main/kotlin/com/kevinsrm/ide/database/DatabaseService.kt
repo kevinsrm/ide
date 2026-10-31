@@ -17,11 +17,9 @@ import java.io.InputStreamReader
  */
 class DatabaseService : ViewModel() {
 
-    private var status: ServiceStatus = ServiceStatus.STOPPED
+    /** Status atual do servico de banco (somente leitura para os fragmentos). */
+    var status: ServiceStatus = ServiceStatus.STOPPED
         private set
-
-    /** Retorna o status atual do servico de banco. */
-    fun getStatus(): ServiceStatus = status
 
     /** Verifica se os binarios do MariaDB estao disponíveis. */
     fun isInstalled(): Boolean {

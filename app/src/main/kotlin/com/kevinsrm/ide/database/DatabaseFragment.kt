@@ -71,7 +71,7 @@ class DatabaseFragment : IdeFragment() {
     }
 
     private fun updateStatus() {
-        val status = databaseService.getStatus()
+        val status = databaseService.status
         binding.databaseStatus.text = when (status) {
             com.kevinsrm.ide.ServiceStatus.RUNNING -> "Banco de dados rodando"
             com.kevinsrm.ide.ServiceStatus.STOPPED -> "Banco de dados parado"

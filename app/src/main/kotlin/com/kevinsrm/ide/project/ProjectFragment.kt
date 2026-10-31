@@ -46,9 +46,8 @@ class ProjectFragment : IdeFragment() {
                 refreshProjectList()
                 // Atualiza o diretorio de trabalho do terminal/runtime
                 val mainActivity = requireActivity() as MainActivity
-                mainActivity.getNodeRuntime().setWorkDir(
+                mainActivity.provideNodeRuntime().workDir =
                     projectManagerViewModel.activeProjectDir!!
-                )
             }
         })
 
@@ -75,9 +74,8 @@ class ProjectFragment : IdeFragment() {
                 refreshProjectList()
                 // Atualiza o diretorio de trabalho do terminal
                 val mainActivity = requireActivity() as MainActivity
-                mainActivity.getNodeRuntime().setWorkDir(
+                mainActivity.provideNodeRuntime().workDir =
                     projectManagerViewModel.activeProjectDir!!
-                )
             }
         }
 
@@ -100,7 +98,7 @@ class ProjectFragment : IdeFragment() {
                     size = 0
                 )
             }
-            adapter.setItems(items)
+            adapter.replaceItems(items)
         }
     }
 
