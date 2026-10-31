@@ -1,0 +1,41 @@
+<resources>
+    <!-- Cores principais do tema -->
+    <color name="colorPrimary">#0F172A</color>
+    <color name="colorPrimaryDark">#020617</color>
+    <color name="colorAccent">#22D3EE</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorBackground">#F8FAFC</color>
+
+    <!-- Editor -->
+    <color name="editor_background">#0B0C10</color>
+    <color name="editor_text">#C5C6C7</color>
+    <color name="editor_placeholder">#6E7681</color>
+
+    <!-- Terminal -->
+    <color name="terminal_background">#000000</color>
+    <color name="terminal_text">#00FF41</color>
+    <color name="terminal_placeholder">#555555</color>
+    <color name="terminal_status_bg">#111111</color>
+    <color name="terminal_status_text">#00FF41</color>
+    <color name="terminal_input_bg">#0A0A0A</color>
+
+    <!-- Projeto -->
+    <color name="project_background">#FFFFFF</color>
+    <color name="project_placeholder">#6B7280</color>
+
+    <!-- Banco de Dados -->
+    <color name="database_background">#FFFFFF</color>
+    <color name="database_text">#1F2937</color>
+    <color name="database_status_bg">#F3F4F6</color>
+    <color name="database_status_text">#111827</color>
+
+    <!-- Arquivos -->
+    <color name="file_name">#111827</color>
+    <color name="file_detail">#6B7280</color>
+    <color name="file_icon_tint">#6B7280</color>
+
+    <!-- Diversos -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="accent_teal">#22D3EE</color>
+</resources>

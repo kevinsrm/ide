@@ -1,0 +1,16 @@
+# Pacotes do bootstrap do Termux para o IDE Node.js
+# Execute: pkg install $(grep -v '^#' termux/bootstrap-packages.txt | tr '\n' ' ')
+
+nodejs
+npm
+mariadb
+termux-api
+openssh
+git
+curl
+wget
+vim
+nano
+which
+proot
+tsu
