@@ -26,7 +26,7 @@ class ProjectManager : ViewModel() {
 
     // Diretorio raiz onde os projetos sao armazenados
     val projectsRoot: File
-        get() = AppPaths.projectsDir(context?.externalFilesDir)
+        get() = AppPaths.projectsDir(context?.getExternalFilesDir(null))
 
     /** Retorna o projeto ativo, se houver. */
     val activeProjectInfo: ProjectInfo?

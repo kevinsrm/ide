@@ -89,9 +89,10 @@ class DatabaseService : ViewModel() {
     private fun readStream(stream: java.io.InputStream): String {
         val reader = BufferedReader(InputStreamReader(stream))
         val lines = StringBuilder()
-        var line: String?
-        while { line = reader.readLine() } != null {
+        var line = reader.readLine()
+        while (line != null) {
             lines.append(line).append("\n")
+            line = reader.readLine()
         }
         return lines.toString()
     }

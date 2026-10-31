@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.kevinsrm.ide.IdeFragment
 import com.kevinsrm.ide.R
 import com.kevinsrm.ide.databinding.FragmentDatabaseBinding
+import kotlinx.coroutines.launch
 
 /**
  * Fragmento do Banco de Dados.
@@ -41,7 +42,7 @@ class DatabaseFragment : IdeFragment() {
         updateStatus()
 
         binding.databaseStart.setOnClickListener {
-            lifecycleScope.launchWhenStarted {
+            lifecycleScope.launch {
                 if (!databaseService.isInstalled()) {
                     appendOutput("MariaDB/MySQL nao encontrado no Termux.\n")
                     appendOutput("Rote: instale o pacote 'mariadb' via 'pkg install mariadb'.\n")
@@ -57,7 +58,7 @@ class DatabaseFragment : IdeFragment() {
         binding.btnQuery.setOnClickListener {
             val sql = binding.inputSql.text.toString().trim()
             if (sql.isNotEmpty()) {
-                lifecycleScope.launchWhenStarted {
+                lifecycleScope.launch {
                     databaseService.query(sql).let { result ->
                         appendOutput(result.output)
                         if (result.error.isNotEmpty()) {

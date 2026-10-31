@@ -9,7 +9,7 @@ Node.js/NPM pré-configurados e serviço de banco de dados **MariaDB/MySQL**.
 ide/
 ├── app/                              # Módulo principal do aplicativo Android (Kotlin)
 │   ├── src/main/
-│   │   ├── java/com/kevinsrm/ide/
+│   │   ├── kotlin/com/kevinsrm/ide/
 │   │   │   ├── MainActivity.kt       # Atividade principal (navegação Editor/Terminal/Projeto/DB)
 │   │   │   ├── project/              # Gerenciamento de projetos e diretório ativo
 │   │   │   │   └── ProjectManager.kt
@@ -48,8 +48,10 @@ ide/
 
 ## Pré-requisitos
 
-- Android Studio (Giraffe ou superior) com SDK 34+
-- JDK 17
+- **Gradle 9.6+** (o projeto usa o DSL público do AGP 9 e exige Gradle 9.6.0 ou superior)
+- **Android Gradle Plugin 9.4.0** (aplicado pelo `build.gradle.kts` raiz)
+- **JDK 17+** (obrigatório pelo AGP 9 / Gradle 9)
+- SDK Android: plataforma **android-34** e **build-tools 36.0.0** (mínimo exigido pelo AGP 9)
 - Dispositivo ou emulador Android (API 24+)
 - Aplicativo **Termux** instalado (F-Droid ou Google Play)
 - Complemento **Termux:API** recomendado
@@ -64,11 +66,23 @@ cd ide
 # Dê permissão de execução ao wrapper (Linux/macOS)
 chmod +x gradlew
 
-# Faça o build de debug
+# Faça o build de debug (wrapper fixado em Gradle 9.6.1)
 ./gradlew assembleDebug
 
 # Instale no dispositivo conectado
 ./gradlew installDebug
+```
+
+Também é possível usar o Gradle do sistema, desde que seja 9.6+:
+
+```bash
+gradle :app:assembleDebug
+```
+
+Se o build reclamar de SDK ausente, instale os pacotes mínimos:
+
+```bash
+sdkmanager "platforms;android-34" "build-tools;36.0.0"
 ```
 
 ## Configurando o Termux (Node.js + NPM + MariaDB)

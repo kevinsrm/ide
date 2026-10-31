@@ -32,7 +32,7 @@ class TerminalSession : ViewModel() {
 
     fun init(context: Context) {
         this.context = context
-        currentWorkingDir = AppPaths.projectsDir(context.externalFilesDir)
+        currentWorkingDir = AppPaths.projectsDir(context.getExternalFilesDir(null))
     }
 
     /** Define o diretorio de trabalho (cwd) dos comandos. */
@@ -85,9 +85,10 @@ class TerminalSession : ViewModel() {
     private fun readStream(stream: java.io.InputStream): String {
         val reader = BufferedReader(InputStreamReader(stream))
         val lines = StringBuilder()
-        var line: String?
-        while { line = reader.readLine() } != null {
+        var line = reader.readLine()
+        while (line != null) {
             lines.append(line).append("\n")
+            line = reader.readLine()
         }
         return lines.toString()
     }

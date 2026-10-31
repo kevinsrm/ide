@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kevinsrm.ide.IdeFragment
+import com.kevinsrm.ide.MainActivity
 import com.kevinsrm.ide.R
 import com.kevinsrm.ide.databinding.FragmentProjectBinding
 import com.kevinsrm.ide.explorer.FileExplorer
