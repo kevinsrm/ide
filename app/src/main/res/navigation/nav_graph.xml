@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/editorFragment">
+
+    <fragment
+        android:id="@+id/editorFragment"
+        android:name="com.kevinsrm.ide.editor.EditorFragment"
+        android:label="@string/tab_editor" />
+
+    <fragment
+        android:id="@+id/terminalFragment"
+        android:name="com.kevinsrm.ide.terminal.TerminalFragment"
+        android:label="@string/tab_terminal" />
+
+    <fragment
+        android:id="@+id/projectFragment"
+        android:name="com.kevinsrm.ide.project.ProjectFragment"
+        android:label="@string/tab_project" />
+
+    <fragment
+        android:id="@+id/databaseFragment"
+        android:name="com.kevinsrm.ide.database.DatabaseFragment"
+        android:label="@string/tab_database" />
+
+</navigation>

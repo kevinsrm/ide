@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/editorFragment"
+        android:icon="@drawable/ic_file"
+        android:title="@string/tab_editor" />
+
+    <item
+        android:id="@+id/terminalFragment"
+        android:icon="@drawable/ic_terminal"
+        android:title="@string/tab_terminal" />
+
+    <item
+        android:id="@+id/projectFragment"
+        android:icon="@drawable/ic_folder"
+        android:title="@string/tab_project" />
+
+    <item
+        android:id="@+id/databaseFragment"
+        android:icon="@drawable/ic_file"
+        android:title="@string/tab_database" />
+
+</menu>

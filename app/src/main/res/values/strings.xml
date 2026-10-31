@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">IDE Node.js</string>
+
+    <!-- Navegacao / abas -->
+    <string name="tab_editor">Editor</string>
+    <string name="tab_terminal">Terminal</string>
+    <string name="tab_project">Projeto</string>
+    <string name="tab_database">Banco de Dados</string>
+
+    <!-- Editor -->
+    <string name="editor_empty">Nenhum arquivo aberto</string>
+    <string name="editor_placeholder">Abra um arquivo para editar... </string>
+
+    <!-- Terminal -->
+    <string name="terminal_stopped">Terminal parado</string>
+    <string name="terminal_running">Terminal ativo</string>
+    <string name="terminal_hint">Digite um comando (node, npm, mysql, …)</string>
+    <string name="terminal_prompt">$</string>
+
+    <!-- Projeto -->
+    <string name="project_empty">Nenhum projeto aberto</string>
+    <string name="project_create">Criar projeto</string>
+    <string name="project_open">Abrir projeto</string>
+    <string name="project_dir">Diretorio do projeto ativo</string>
+
+    <!-- Banco de Dados -->
+    <string name="database_stopped">Banco de dados parado</string>
+    <string name="database_running">MariaDB/MySQL rodando</string>
+    <string name="database_start">Iniciar MariaDB</string>
+    <string name="database_stop">Parar MariaDB</string>
+    <string name="database_query">Executar SQL</string>
+
+    <!-- Mensagens -->
+    <string name="msg_termux_not_found">Termux nao encontrado. Instale o app Termux para usar o ambiente completo.</string>
+    <string name="msg_node_not_found">Node.js nao encontrado no rootfs do Termux.</string>
+    <string name="msg_mysql_not_found">MariaDB/MySQL nao encontrado no rootfs do Termux.</string>
+
+    <string name="default_projects_dir">projects</string>
+</resources>
