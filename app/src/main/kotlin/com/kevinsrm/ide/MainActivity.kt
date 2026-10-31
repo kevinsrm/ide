@@ -80,22 +80,22 @@ class MainActivity : AppCompatActivity() {
     /**
      * Retorna o servico de ponte com o Termux (para uso dos fragmentos).
      */
-    fun getTermuxBridge(): TermuxBridge = termuxBridge
+    fun provideTermuxBridge(): TermuxBridge = termuxBridge
 
     /**
      * Retorna o gerenciador de projetos (diretorio ativo).
      */
-    fun getProjectManager(): ProjectManager = projectManager
+    fun provideProjectManager(): ProjectManager = projectManager
 
     /**
      * Retorna o wrapper do runtime Node.js.
      */
-    fun getNodeRuntime(): NodeRuntime = nodeRuntime
+    fun provideNodeRuntime(): NodeRuntime = nodeRuntime
 
     /**
      * Retorna o servico de banco de dados MariaDB/MySQL.
      */
-    fun getDatabaseService(): DatabaseService = databaseService
+    fun provideDatabaseService(): DatabaseService = databaseService
 
     companion object {
         const val REQUEST_TERMUX_PERMISSIONS = 1001
@@ -112,16 +112,16 @@ abstract class IdeFragment : Fragment() {
         get() = requireActivity() as MainActivity
 
     protected val projectManager: ProjectManager
-        get() = mainActivity.getProjectManager()
+        get() = mainActivity.provideProjectManager()
 
     protected val termuxBridge: TermuxBridge
-        get() = mainActivity.getTermuxBridge()
+        get() = mainActivity.provideTermuxBridge()
 
     protected val nodeRuntime: NodeRuntime
-        get() = mainActivity.getNodeRuntime()
+        get() = mainActivity.provideNodeRuntime()
 
     protected val databaseService: DatabaseService
-        get() = mainActivity.getDatabaseService()
+        get() = mainActivity.provideDatabaseService()
 }
 
 /**

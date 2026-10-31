@@ -16,7 +16,8 @@ import java.io.InputStreamReader
  */
 class NodeRuntime : ViewModel() {
 
-    private var workDir: java.io.File = AppPaths.projectsDir(null)
+    /** Diretorio de trabalho (projeto ativo) onde node/npm sao executados. */
+    var workDir: java.io.File = AppPaths.projectsDir(null)
 
     private var nodeBin: String = AppPaths.NODE_BIN
     private var npmBin: String = AppPaths.NPM_BIN
@@ -24,14 +25,6 @@ class NodeRuntime : ViewModel() {
     fun initialize(projectDir: java.io.File?) {
         workDir = projectDir ?: AppPaths.projectsDir(null)
     }
-
-    /** Define o diretorio de trabalho (projeto ativo). */
-    fun setWorkDir(dir: java.io.File) {
-        workDir = dir
-    }
-
-    /** Retorna o diretorio de trabalho atual. */
-    fun getWorkDir(): java.io.File = workDir
 
     /** Verifica se o Node.js esta disponível no ambiente. */
     fun isNodeAvailable(): Boolean {

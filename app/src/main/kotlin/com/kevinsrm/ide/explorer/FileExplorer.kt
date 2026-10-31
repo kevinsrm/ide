@@ -50,7 +50,7 @@ class FileExplorerAdapter(
 
     override fun getItemCount(): Int = items.size
 
-    fun setItems(newItems: List<FileItem>) {
+    fun replaceItems(newItems: List<FileItem>) {
         items.clear()
         items.addAll(newItems)
         notifyDataSetChanged()
